@@ -4,7 +4,7 @@ const request = require('request');
 
 const token = '775825380:AAHQ05AYqX4bKoQBAnr2VjuYqHw4SKZEn40';
 
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(token);
 
 bot.onText(/\/valuta/, (msg, match) => {
   
