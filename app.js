@@ -51,5 +51,5 @@ bot.on('callback_query' , query => {
         
         `;
         bot.sendMessage(id, md, {parse_mode:'Markdown'})
-    })
-})
+    });
+});
