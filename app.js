@@ -50,6 +50,6 @@ bot.on('callback_query' , query => {
             Sale:_${result.sale}_
         
         `;
-        bot.sendMessage(id, md, {parse_mode:'Markdown'})
+        bot.sendMessage(id, md, {parse_mode:'Markdown'});
     });
 });
