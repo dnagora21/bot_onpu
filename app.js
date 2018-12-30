@@ -1,10 +1,20 @@
-
 const TelegramBot = require('node-telegram-bot-api');
 const request = require('request');
+const options = {
+    webHook: {
+      // Port to which you should bind is assigned to $PORT variable
+      // See: https://devcenter.heroku.com/articles/dynos#local-environment-variables
+      port: process.env.PORT
+      // you do NOT need to set up certificates since Heroku provides
+      // the SSL certs already (https://<app-name>.herokuapp.com)
+      // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
+    }
+  };
+  const url = process.env.APP_URL || 'https://dnagorabot.herokuapp.com:443';
+const TOKEN = '775825380:AAFrwaRuD2YYTwUqzet80JRzJ2jOW8H_WR8';
 
-const token = '775825380:AAFrwaRuD2YYTwUqzet80JRzJ2jOW8H_WR8';
-
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(TOKEN, options);
+bot.setWebHook(`${url}/bot${TOKEN}`);
 
 bot.onText(/\/valuta/, (msg, match) => {
   
