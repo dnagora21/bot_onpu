@@ -10,7 +10,7 @@ const options = {
       // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
     }
   };
-  const url = process.env.APP_URL || 'https://dnagorabot.herokuapp.com:445';
+  const url = process.env.APP_URL || 'https://dnagorabot.herokuapp.com:443';
 const TOKEN = '775825380:AAFrwaRuD2YYTwUqzet80JRzJ2jOW8H_WR8';
 
 const bot = new TelegramBot(TOKEN, options);
